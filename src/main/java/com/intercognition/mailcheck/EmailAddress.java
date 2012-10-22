@@ -28,28 +28,41 @@ public class EmailAddress {
         return new EmailAddress(address+"@"+newDomain);
     }
 
+    /**
+     * @return true if domain, address, and tld have been successfully extracted
+     */
     public boolean isValid() {
         return valid;
     }
 
+    /**
+     * @return top level domain, i.e. 'com', 'co.uk'
+     */
     public String getTLD() {
         return tld;
     }
 
+    /**
+     * @return domain, i.e. 'hotmail.com'
+     */
     public String getDomain() {
         return domain;
     }
 
+    /**
+     * @return email address, i.e. 'test@example.com'
+     */
     public String getAddress() {
         return address;
     }
 
+    /**
+     * @param domain i.e. 'hotmail.com'
+     * @return true if this email address has a valid domain that is the same as the given domain parameter
+     */
     public boolean hasDomain(String domain) {
-        if(this.domain == null || domain == null) return false;
-        return this.domain.equals(domain);
+        return !(this.domain == null || domain == null) && this.domain.equals(domain);
     }
-
-
 
     private boolean emailAddressHasAtLeastTwoNonEmptyParts(String[] parts) {
         if(parts.length < 2) {
