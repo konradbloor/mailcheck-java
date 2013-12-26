@@ -26,7 +26,7 @@ public class Sift3 implements DistanceAlgorithm {
             return isNullOrEmpty(secondString) ? 0 : secondString.length();
         if (isNullOrEmpty(secondString))
             return firstString.length();
-        
+
         int c = 0;
         int offset1 = 0;
         int offset2 = 0;
@@ -56,7 +56,7 @@ public class Sift3 implements DistanceAlgorithm {
             }
             c++;
         }
-        return (firstString.length() + secondString.length())/2 - lcs;
+        return (firstString.length() + secondString.length())/2.0f - lcs;
     }
 
     private boolean isNullOrEmpty(String candidate) {
