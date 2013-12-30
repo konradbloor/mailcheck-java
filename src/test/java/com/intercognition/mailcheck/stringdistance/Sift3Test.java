@@ -1,9 +1,8 @@
 package com.intercognition.mailcheck.stringdistance;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 public class Sift3Test {
 
@@ -45,8 +44,8 @@ public class Sift3Test {
     }
 
     @Test
-    public void differenceFurtherThanMaximumOffsetBetweenStringsIsZero() {
-        assertEquals(0D, sift3.getDistance("abcdef", "abcdefg"), 0D);
+    public void differenceFurtherThanMaximumOffsetBetweenStringsIsCountedAsDistance() {
+        assertEquals(0D, sift3.getDistance("abcdef", "abcdefg"), 0.5f);
     }
 
     @Test
@@ -55,8 +54,8 @@ public class Sift3Test {
     }
 
     @Test
-    public void additionalCharacterWithinOffsetRangeIsNotCountedAsDistance() {
-        assertEquals(0D, sift3.getDistance("abc", "abcd"), 0D);
+    public void additionalCharacterWithinOffsetRangeIsCountedAsDistance() {
+        assertEquals(0D, sift3.getDistance("abc", "abcd"), 0.5f);
     }
 
 }
