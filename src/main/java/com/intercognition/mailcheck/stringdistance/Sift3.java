@@ -60,6 +60,6 @@ public class Sift3 implements DistanceAlgorithm {
     }
 
     private boolean isNullOrEmpty(String candidate) {
-        return candidate == null || candidate.isEmpty();
+        return candidate == null || candidate.length() == 0;
     }
 }
