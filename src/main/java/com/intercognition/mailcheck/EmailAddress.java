@@ -1,7 +1,5 @@
 package com.intercognition.mailcheck;
 
-import java.util.Arrays;
-
 public class EmailAddress {
 
     private String address;
@@ -17,8 +15,11 @@ public class EmailAddress {
 
         domain = parts[parts.length-1];
 
-        parts = Arrays.copyOfRange(parts,0,parts.length-1);
-        address = join(parts,"@");
+		final String[] tmp = new String[parts.length-1];
+		System.arraycopy(parts, 0, tmp, 0, parts.length-1);
+		parts = tmp;
+
+		address = join(parts,"@");
 
         tld = extractTld(domain);
         if(tld == null) valid = false;
@@ -69,7 +70,7 @@ public class EmailAddress {
             return false;
         }
         for(String part : parts) {
-            if(part.isEmpty()) {
+            if(part.length() == 0) {
                 return false;
             }
         }
