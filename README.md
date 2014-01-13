@@ -47,6 +47,13 @@ Author
 
 Konrad Bloor (<kb@konradbloor.com>)
 
+
+Contributors
+------------
+
+Quenio dos Santos (<https://github.com/quenio>)
+
+
 License
 -------
 
