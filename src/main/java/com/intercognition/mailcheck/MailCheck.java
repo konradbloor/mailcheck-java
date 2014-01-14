@@ -1,10 +1,9 @@
 package com.intercognition.mailcheck;
 
-import com.intercognition.mailcheck.config.Configuration;
-import com.intercognition.mailcheck.config.SimpleConfiguration;
-import com.intercognition.mailcheck.stringdistance.DistanceAlgorithm;
-
 import java.util.Collection;
+
+import com.intercognition.mailcheck.config.Configuration;
+import com.intercognition.mailcheck.stringdistance.DistanceAlgorithm;
 
 /**
  * Usage:
@@ -68,7 +67,7 @@ public class MailCheck {
         float smallestMatchDistance = 99;
         String closestMatch = null;
 
-        if (candidate == null || candidate.isEmpty() || possibleMatches == null || possibleMatches.isEmpty()) {
+        if (candidate == null || candidate.length() == 0 || possibleMatches == null || possibleMatches.isEmpty()) {
             return null;
         }
 
