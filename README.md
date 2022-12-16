@@ -1,6 +1,8 @@
 mailcheck-java
 ==============
 
+This is a fork of the original for the purpose of publishing it to maven-central.
+
 Introduction
 ------------
 I noticed there was a useful project by Derrick Ko of Kicksend at <https://github.com/Kicksend/mailcheck>,
@@ -18,16 +20,13 @@ glue code, but I haven't put this in yet because an email address that has a sug
 Installation
 ------------
 
-I haven't put this in any maven repositories, so your best bet is to grab the code and install the project
-in your maven repository.
+Assuming maven, in your pom.xml:
 
-You can then add it your project (assuming you use Maven) by referring to it using the maven coordinates:
-
-    <dependency>
-        <groupId>com.intercognition</groupId>
-        <artifactId>mailcheck-java</artifactId>
-        <version>0.1</version>
-    </dependency>
+	<dependency>
+		<groupId>com.github.bordertech.mailcheck</groupId>
+		<artifactId>mailcheck-java</artifactId>
+		<version> <!-- put latest version here --> </version>
+	</dependency>
 
 
 Usage
@@ -35,8 +34,8 @@ Usage
 I've created it so that it can be easily used programmatically or configured by an IOC container like
 Spring.  You can get up and running quickly by doing the following:
 
-    MailCheck mailCheck = new MailCheck(new DefaultConfiguration());
-    EmailAddress address = mailCheck.suggest("user@hotmail.cod");
+	MailCheck mailCheck = new MailCheck(new DefaultConfiguration());
+	EmailAddress address = mailCheck.suggest("user@hotmail.cod");
 
 This will return you an EmailAddress object giving you a suggestion.  If a suggestion could not be found, a null
 EmailAddress will be returned.
