@@ -5,8 +5,15 @@ import com.intercognition.mailcheck.stringdistance.DistanceAlgorithm;
 import java.util.Collection;
 
 public interface Configuration {
-    public int getThreshold();
-    public Collection<String> getDomains();
-    public Collection<String> getTopLevelDomains();
-    public DistanceAlgorithm getDistanceAlgorithm();
+	@SuppressWarnings("checkstyle:MissingJavadocMethod")
+	int getThreshold();
+
+	@SuppressWarnings("checkstyle:MissingJavadocMethod")
+	Collection<String> getDomains();
+
+	@SuppressWarnings("checkstyle:MissingJavadocMethod")
+	Collection<String> getTopLevelDomains();
+
+	@SuppressWarnings("checkstyle:MissingJavadocMethod")
+	DistanceAlgorithm getDistanceAlgorithm();
 }
