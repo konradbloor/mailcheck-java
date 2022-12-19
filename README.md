@@ -3,6 +3,13 @@ mailcheck-java
 
 This is a fork of the original for the purpose of publishing it to maven-central.
 
+[![Build Status](https://github.com/BorderTech/mailcheck-java/actions/workflows/github-actions-build.yml/badge.svg)](https://github.com/BorderTech/mailcheck-java/actions/workflows/github-actions-build.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bordertech-mailcheck-java&metric=alert_status)](https://sonarcloud.io/dashboard?id=bordertech-mailcheck-java)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=bordertech-mailcheck-java&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=bordertech-mailcheck-java)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=bordertech-mailcheck-java&metric=coverage)](https://sonarcloud.io/dashboard?id=bordertech-mailcheck-java)
+[![javadoc](https://javadoc.io/badge2/com.github.bordertech.mailcheck/mailcheck-java/javadoc.svg)](https://javadoc.io/doc/com.github.bordertech.mailcheck/mailcheck-java)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.bordertech.mailcheck/mailcheck-java.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.bordertech.mailcheck%22%20AND%20a:%22mailcheck-java%22)
+
 Introduction
 ------------
 I noticed there was a useful project by Derrick Ko of Kicksend at <https://github.com/Kicksend/mailcheck>,
@@ -22,20 +29,23 @@ Installation
 
 Assuming maven, in your pom.xml:
 
-	<dependency>
-		<groupId>com.github.bordertech.mailcheck</groupId>
-		<artifactId>mailcheck-java</artifactId>
-		<version> <!-- put latest version here --> </version>
-	</dependency>
-
+```xml
+<dependency>
+    <groupId>com.github.bordertech.mailcheck</groupId>
+    <artifactId>mailcheck-java</artifactId>
+    <version> <!-- put latest version here --> </version>
+</dependency>
+```
 
 Usage
 -----
 I've created it so that it can be easily used programmatically or configured by an IOC container like
 Spring.  You can get up and running quickly by doing the following:
 
-	MailCheck mailCheck = new MailCheck(new DefaultConfiguration());
-	EmailAddress address = mailCheck.suggest("user@hotmail.cod");
+```java
+MailCheck mailCheck = new MailCheck(new DefaultConfiguration());
+EmailAddress address = mailCheck.suggest("user@hotmail.cod");
+```
 
 This will return you an EmailAddress object giving you a suggestion.  If a suggestion could not be found, a null
 EmailAddress will be returned.
@@ -44,13 +54,13 @@ EmailAddress will be returned.
 Author
 -------
 
-Konrad Bloor (<kb@konradbloor.com>)
+[Konrad Bloor](<kb@konradbloor.com>)
 
 
 Contributors
 ------------
 
-Quenio dos Santos (<https://github.com/quenio>)
+[Quenio dos Santos](<https://github.com/quenio>)
 
 
 License
